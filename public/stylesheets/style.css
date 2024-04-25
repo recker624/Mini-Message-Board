@@ -1,8 +1,158 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+}
+body .root {
+  width: 100%;
+  height: 100%;
+  border: 1rem solid #0073f7;
+  display: flex;
+  flex-direction: column;
+}
+body .root .heading-bar,
+body .root .attribution {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+  border-bottom: 1px solid black;
+  padding: 0.3rem 0;
+}
+body .root .heading-bar h1,
+body .root .attribution h1 {
+  margin: 0;
+  padding: 1rem 0rem;
+}
+body .root .attribution span {
+  font-size: 1.4rem;
+}
+body .root #message-board {
+  width: 100%;
+  flex: 1;
+  padding: 1rem 2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+body .root #message-board p {
+  padding: 0;
+  margin: 0;
+}
+body .root #message-board #message-chat-area {
+  width: 100%;
+  min-height: 80%;
+  flex: 9;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+body .root #message-board #message-chat-area .message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 1.2rem;
+}
+body .root #message-board #message-chat-area .message .message-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+body .root #message-board #message-chat-area .message .message-info .message-user-name {
+  font-size: 2rem;
+  font-weight: 800;
+}
+body .root #message-board #message-chat-area .message .message-info .message-added-date {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+body .root #message-board #message-chat-area .message .message-text p {
+  font-size: 2rem;
+}
+body .root #message-board #user-form-outer {
+  height: 2rem;
+  width: 100%;
+  padding: 1rem 0.8rem;
+  flex: 1;
+}
+body .root #message-board #user-form-outer #user-form-inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message {
+  width: 100%;
+  position: relative;
+  flex: 1;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name .label-user,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name .label-message,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message .label-user,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message .label-message {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-user,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-message,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-user,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-message {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #d1d1d1;
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-user,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-user {
+  border-radius: 1rem 0 0 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-message,
+body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-message {
+  border-radius: 0 0 0 1rem;
+  border-right: 0;
+}
+body .root #message-board #user-form-outer #user-form-inner #form-submit-btn {
+  flex: 1;
+  height: 100%;
+  border: 0;
+}
+body .root #message-board #user-form-outer #user-form-inner #form-submit-btn button {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: 5px solid #d1d1d1;
+  border-radius: 0 1rem 1rem 0;
+}
+body .root #message-board #user-form-outer #user-form-inner #form-submit-btn button svg {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 0;
 }

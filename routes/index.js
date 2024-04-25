@@ -1,16 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
+const monthsAbbreviated = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
 const messages = [
   {
     text: "Hi there",
     user: "Amando",
-    added: new Date(),
+    added: (new Date()).toUTCString()
   },
   {
     text: "Hello World",
     user: "Charles",
-    added: new Date(),
+    added: (new Date()).toUTCString()
   }
 ];
 
@@ -19,16 +24,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { messages });
 });
 
-router.get('/new', (req, res, next) => {
-   res.render('form');
-});
 
-router.post("/new", (req, res, next) => {
+router.post("/", (req, res, next) => {
   const user = req.body.user;
   const message = req.body.message;
+  const added = (new Date()).toUTCString();
 
-  messages.push({ text: message, user: user, added: new Date() });
-  res.redirect('/');
+  messages.push({ text: message, user: user, added: added });
+  res.redirect("/");
 });
 
 module.exports = router;
