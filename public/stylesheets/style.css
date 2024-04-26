@@ -80,32 +80,29 @@ body .root #message-board #message-chat-area .message .message-info .message-add
 body .root #message-board #message-chat-area .message .message-text p {
   font-size: 2rem;
 }
-body .root #message-board #user-form-outer {
+body .root #message-board #user-form {
   height: 2rem;
   width: 100%;
   padding: 1rem 0.8rem;
   flex: 1;
-}
-body .root #message-board #user-form-outer #user-form-inner {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields {
+body .root #message-board #user-form .input-fields {
   width: 80%;
   display: flex;
   flex-direction: column;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message {
+body .root #message-board #user-form .input-fields #form-user-name,
+body .root #message-board #user-form .input-fields #form-user-message {
   width: 100%;
   position: relative;
   flex: 1;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name .label-user,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name .label-message,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message .label-user,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message .label-message {
+body .root #message-board #user-form .input-fields #form-user-name .label-user,
+body .root #message-board #user-form .input-fields #form-user-name .label-message,
+body .root #message-board #user-form .input-fields #form-user-message .label-user,
+body .root #message-board #user-form .input-fields #form-user-message .label-message {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -115,44 +112,148 @@ body .root #message-board #user-form-outer #user-form-inner .input-fields #form-
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-user,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-message,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-user,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-message {
+body .root #message-board #user-form .input-fields #form-user-name #input-user,
+body .root #message-board #user-form .input-fields #form-user-name #input-message,
+body .root #message-board #user-form .input-fields #form-user-message #input-user,
+body .root #message-board #user-form .input-fields #form-user-message #input-message {
   width: 100%;
   height: 100%;
   border: 5px solid #d1d1d1;
   font-size: 2rem;
   padding-left: 1rem;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-user,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-user {
+body .root #message-board #user-form .input-fields #form-user-name #input-user,
+body .root #message-board #user-form .input-fields #form-user-message #input-user {
   border-radius: 1rem 0 0 0;
   border-bottom: 0;
   border-right: 0;
 }
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-name #input-message,
-body .root #message-board #user-form-outer #user-form-inner .input-fields #form-user-message #input-message {
+body .root #message-board #user-form .input-fields #form-user-name #input-message,
+body .root #message-board #user-form .input-fields #form-user-message #input-message {
   border-radius: 0 0 0 1rem;
   border-right: 0;
 }
-body .root #message-board #user-form-outer #user-form-inner #form-submit-btn {
-  flex: 1;
-  height: 100%;
-  border: 0;
-}
-body .root #message-board #user-form-outer #user-form-inner #form-submit-btn button {
+body .root #message-board #user-form #form-submit-btn {
   padding: 0;
   margin: 0;
   height: 100%;
-  width: 100%;
+  flex: 1;
   border: 5px solid #d1d1d1;
   border-radius: 0 1rem 1rem 0;
 }
-body .root #message-board #user-form-outer #user-form-inner #form-submit-btn button svg {
+body .root #message-board #user-form #form-submit-btn svg {
   padding: 1rem;
   height: 100%;
   width: 100%;
   background-color: white;
   border: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .root {
+    width: 50%;
+    height: 80%;
+    border: 1px solid #ffffff;
+    border-radius: 2%;
+    box-shadow: 0 0 10px 0.5px;
+  }
+  body .root .heading-bar,
+  body .root .attribution {
+    font-size: 0.8rem;
+    border-bottom: 1px solid black;
+    padding: 0.1rem 0;
+  }
+  body .root .heading-bar h1,
+  body .root .attribution h1 {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  body .root .attribution span {
+    font-size: 0.7rem;
+  }
+  body .root #message-board {
+    padding: 0.5rem 0.8rem;
+    margin: 0;
+    align-items: center;
+  }
+  body .root #message-board p {
+    padding: 0;
+    margin: 0;
+  }
+  body .root #message-board #message-chat-area {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+    gap: 1rem;
+    flex: 7;
+  }
+  body .root #message-board #message-chat-area .message {
+    gap: 0.5rem;
+    font-size: 0.5rem;
+  }
+  body .root #message-board #message-chat-area .message .message-info {
+    gap: 0.5rem;
+  }
+  body .root #message-board #message-chat-area .message .message-info .message-user-name {
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+  body .root #message-board #message-chat-area .message .message-info .message-added-date {
+    font-size: 0.6rem;
+    font-weight: 400;
+  }
+  body .root #message-board #message-chat-area .message .message-text p {
+    font-size: 0.8rem;
+  }
+  body .root #message-board #user-form {
+    height: 1rem;
+    padding: 0.5rem 0.4rem;
+    width: 80%;
+  }
+  body .root #message-board #user-form .input-fields {
+    width: 90%;
+  }
+  body .root #message-board #user-form .input-fields #form-user-name #input-user,
+  body .root #message-board #user-form .input-fields #form-user-name #input-message,
+  body .root #message-board #user-form .input-fields #form-user-message #input-user,
+  body .root #message-board #user-form .input-fields #form-user-message #input-message {
+    border: 2px solid #d1d1d1;
+    font-size: 0.8rem;
+    padding-left: 0.7rem;
+  }
+  body .root #message-board #user-form .input-fields #form-user-name #input-user,
+  body .root #message-board #user-form .input-fields #form-user-message #input-user {
+    border-radius: 0.5rem 0 0 0;
+    border-bottom: 0;
+    border-right: 0;
+  }
+  body .root #message-board #user-form .input-fields #form-user-name #input-message,
+  body .root #message-board #user-form .input-fields #form-user-message #input-message {
+    border-radius: 0 0 0 0.5rem;
+    border-right: 0;
+  }
+  body .root #message-board #user-form #form-submit-btn {
+    padding: 0;
+    margin: 0;
+    border: 2px solid #d1d1d1;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+  }
+  body .root #message-board #user-form #form-submit-btn svg {
+    padding: 0.1rem;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 0;
+  }
 }
