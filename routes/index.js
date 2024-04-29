@@ -31,7 +31,7 @@ router.post("/", (req, res, next) => {
   const added = (new Date()).toUTCString();
 
   messages.push({ text: message, user: user, added: added });
-  res.redirect("/");
+  res.redirect('/');
 });
 
 module.exports = router;
